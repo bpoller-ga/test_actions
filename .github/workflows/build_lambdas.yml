@@ -1,13 +1,19 @@
 name: Build_lambdas
 
-on: [workflow_call]
-
+on: 
+  workflow_call:
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.bu.outputs.output1 }}
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         lambda_root: ["extract/lambda", "load/lambda", "transform/lambda"]
+    outputs:
+      output1: ${{ matrix.lambda_root }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python

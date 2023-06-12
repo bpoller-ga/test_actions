@@ -8,6 +8,9 @@ jobs:
     build_lambdas:
       uses: ./.github/workflows/build_lambdas.yml
     deploy_to_infra:
+        needs: 
+          - build_infra
+          - build_lambdas
         runs-on: ubuntu-latest
         steps:
             - name: Deploy that bitch
