@@ -6,7 +6,7 @@ jobs:
     build_infra:
       uses: ./.github/workflows/build_infrastructure.yml
     build_lambdas:
-      uses: ./.github/workflows/build_lambdas.yaml
+      uses: ./.github/workflows/build_lambdas.yml
     deploy_to_infra:
         runs-on: ubuntu-latest
         steps:
