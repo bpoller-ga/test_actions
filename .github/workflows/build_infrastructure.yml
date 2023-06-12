@@ -1,6 +1,6 @@
 name: Create_Infra
 
-on: [push]
+on: [workflow_call]
 
 jobs:
     build_infra:
