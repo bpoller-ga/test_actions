@@ -1,0 +1,11 @@
+name: Create_Infra
+
+on: [push]
+
+jobs:
+    build_infra:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Create Infra
+              run: |
+                  echo "I am creating the infra !"
