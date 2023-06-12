@@ -1,4 +1,4 @@
-name: Deploy_Softwarre
+name: Deploy_Software
 
 on: [push]
 
