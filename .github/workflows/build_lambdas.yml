@@ -1,6 +1,6 @@
 name: Build_lambdas
 
-on: [push]
+on: [workflow_call]
 
 jobs:
   build:
