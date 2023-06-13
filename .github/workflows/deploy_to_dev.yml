@@ -1,0 +1,9 @@
+name: Deploy To Dev
+
+on: push
+
+jobs:
+    deploy_soft_to_infra:
+      uses: ./.github/workflows/deploy_soft_to_infra.yml
+      with:
+        environment_name: 'development'
