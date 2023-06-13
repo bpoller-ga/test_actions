@@ -5,7 +5,7 @@ on:
     outputs:
       firstword:
         description: "The first output string"
-        value: ${{ jobs.bu.outputs.output1 }}
+        value: ${{ jobs.build.outputs.output1 }}
 jobs:
   build:
     runs-on: ubuntu-latest

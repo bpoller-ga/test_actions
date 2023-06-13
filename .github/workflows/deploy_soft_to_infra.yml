@@ -1,6 +1,6 @@
 name: Deploy_Software
 
-on: [push]
+on: workflow_call
 
 jobs:
     build_infra:
@@ -15,4 +15,4 @@ jobs:
         steps:
             - name: Deploy that bitch
               run: |
-                  echo "I am deploying it now !"
+                  echo "I am deploying it now ! to ${{env.the_name}}"

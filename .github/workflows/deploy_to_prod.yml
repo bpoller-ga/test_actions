@@ -1,0 +1,16 @@
+name: Deploy To Production
+
+on: [workflow_dispatch]
+
+jobs:
+    deploy_soft_to_infra:
+      uses: ./.github/workflows/deploy_soft_to_infra.yml
+    log_done:
+      needs: 
+        - deploy_soft_to_infra
+      runs-on: ubuntu-latest
+      environment: prod
+      steps:
+        - name: Deploy that bitch to prod
+          run: |
+              echo "I am deploying it now to prod!"
