@@ -1,6 +1,12 @@
 name: Deploy_Software
 
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      environment_name:
+        type : string
+        required: true
+        default: 'dev'
 
 jobs:
     build_infra:
@@ -8,6 +14,7 @@ jobs:
     build_lambdas:
       uses: ./.github/workflows/build_lambdas.yml
     deploy_to_infra:
+        environment : ${{inputs.environment_name}}
         needs: 
           - build_infra
           - build_lambdas

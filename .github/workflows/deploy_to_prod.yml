@@ -5,12 +5,5 @@ on: [workflow_dispatch]
 jobs:
     deploy_soft_to_infra:
       uses: ./.github/workflows/deploy_soft_to_infra.yml
-    log_done:
-      needs: 
-        - deploy_soft_to_infra
-      runs-on: ubuntu-latest
-      environment: production
-      steps:
-        - name: Deploy that bitch to prod
-          run: |
-              echo "I am deploying it now to prod! My name is ${{vars.MY_NAME}}."
+      with:
+        environment_name: 'production'
