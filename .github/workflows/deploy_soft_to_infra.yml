@@ -15,4 +15,4 @@ jobs:
         steps:
             - name: Deploy that bitch
               run: |
-                  echo "I am deploying it now ! to ${{env.the_name}}"
+                  echo "I am deploying it now ! to ${{vars.MY_NAME}}"

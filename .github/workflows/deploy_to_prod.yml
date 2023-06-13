@@ -9,8 +9,8 @@ jobs:
       needs: 
         - deploy_soft_to_infra
       runs-on: ubuntu-latest
-      environment: prod
+      environment: production
       steps:
         - name: Deploy that bitch to prod
           run: |
-              echo "I am deploying it now to prod!"
+              echo "I am deploying it now to prod! My name is ${{vars.MY_NAME}}."
